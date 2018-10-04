@@ -18,7 +18,7 @@ int main(void)
   if (!Process32First(snap, &entry))
   {
     CloseHandle(snap);
-    return 0;
+    return 1;
   }
 
   do
