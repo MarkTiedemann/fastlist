@@ -9,6 +9,16 @@ fastlist   0:00:00.031    7933      1571    4693     174322
 tasklist   0:00:00.148   71404     28577    6773    1606046
 ```
 
+For each process, `fastlist` prints both the name of the executable file and the process ID, seperated by a `\t`, followed by a `\n`. For example:
+
+```cmd
+λ fastlist
+some.exe     123
+another.exe  456
+```
+
+`fastlist` is presumably faster than `tasklist` because it does **_not_** print the `Session Name`, `Session Number`, nor the `Memory Usage` of each process.
+
 ## Development
 
 - **Install dependencies:** <code><a href="https://scoop.sh/">scoop</a> install visualc rktools2k3</code>
