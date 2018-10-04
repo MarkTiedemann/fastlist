@@ -3,8 +3,8 @@ setlocal enabledelayedexpansion
 set /a runs = 24
 if exist timeit.dat del timeit.dat
 for /f %%r in ( 'copy /Z %~f0 nul' ) do set cr=%%r
-for /l %%x in ( 1, 1, !runs! ) do (
-  < nul set /P = # %%x / !runs! !cr!
+for /l %%i in ( 1, 1, !runs! ) do (
+  < nul set /P = # %%i / !runs! !cr!
   timeit tasklist > nul 2>&1
   timeit fastlist > nul 2>&1
 )
