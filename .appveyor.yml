@@ -1,5 +1,3 @@
-cache:
-  - '%HOME%\scoop'
 install:
   - ps: if ((Get-Command scoop -ErrorAction SilentlyContinue) -eq $null) { iex (new-object net.webclient).downloadstring('https://get.scoop.sh') }
   - ps: scoop bucket add extras
@@ -11,3 +9,5 @@ test_script:
   - cmd: tasklist
   - cmd: fastlist
   - cmd: bench 100
+cache:
+  - '%USERPROFILE%\scoop\cache'
