@@ -1,0 +1,9 @@
+install:
+  - ps: Set-ExecutionPolicy RemoteSigned -Scope CurrentUser
+  - ps: iex (new-object net.webclient).downloadstring('https://get.scoop.sh')
+  - cmd: scoop bucket add extras
+  - cmd: scoop install visualc rktools2k3
+build_script:
+  - cmd: cl fastlist.cpp
+test_script:
+  - cmd: bench 100
