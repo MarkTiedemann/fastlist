@@ -1,4 +1,4 @@
-# fastlist
+# fastlist [![Build status](https://ci.appveyor.com/api/projects/status/430903r5lwlos37g?svg=true)](https://ci.appveyor.com/project/MarkTiedemann/fastlist)
 
 **Like `tasklist`, but 5x faster.**
 
