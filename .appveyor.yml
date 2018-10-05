@@ -1,6 +1,9 @@
+cache:
+  - '%HOME%\scoop'
 install:
-  - ps: iex (new-object net.webclient).downloadstring('https://get.scoop.sh')
+  - ps: if ((Get-Command scoop -ErrorAction SilentlyContinue) -eq $null) { iex (new-object net.webclient).downloadstring('https://get.scoop.sh') }
   - ps: scoop bucket add extras
+  - ps: scoop update *
   - ps: scoop install visualc rktools2k3
 build_script:
   - cmd: cl fastlist.cpp
