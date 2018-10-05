@@ -9,15 +9,15 @@ fastlist   0:00:00.031    7933      1571    4693     174322
 tasklist   0:00:00.148   71404     28577    6773    1606046
 ```
 
-For each process, `fastlist` prints both the name of the executable file and the process ID, seperated by a `\t`, followed by a `\n`. For example:
+For each process, `fastlist` prints (1) the **executable file**, (2) the **process ID**, and (3) the **parent process ID**, each seperated by a `\t`, followed by a `\n`. For example:
 
 ```cmd
 λ fastlist
-some.exe     123
-another.exe  456
+parent.exe  1  0
+child.exe   2  1
 ```
 
-`fastlist` is presumably faster than `tasklist` because it does **_not_** print the `Session Name`, `Session Number`, nor the `Memory Usage` of each process.
+`fastlist` is presumably faster than `tasklist` because it does _not_ print the **session name**, **session number**, nor the **memory usage** of each process. Unlike `tasklist`, it does, however, additionally print the **parent process ID**.
 
 ## Development
 

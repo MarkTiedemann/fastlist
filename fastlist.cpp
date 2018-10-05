@@ -23,7 +23,7 @@ int main(void)
 
   do
   {
-    printf("%s\t%lu\n", entry.szExeFile, entry.th32ProcessID);
+    printf("%s\t%lu\t%lu\n", entry.szExeFile, entry.th32ProcessID, entry.th32ParentProcessID);
   } while (Process32Next(snap, &entry));
   CloseHandle(snap);
   return 0;
