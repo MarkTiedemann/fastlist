@@ -4,10 +4,10 @@ install:
   - ps: scoop update *
   - ps: scoop install visualc rktools2k3
 build_script:
-  - cmd: cl fastlist.cpp
+  - cl fastlist.cpp
 test_script:
-  - cmd: tasklist
-  - cmd: fastlist
-  - cmd: bench 100
+  - tasklist
+  - fastlist
+  - bench 100
 cache:
   - '%USERPROFILE%\scoop'
