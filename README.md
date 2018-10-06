@@ -9,7 +9,7 @@ fastlist   0:00:00.031    7933      1571    4693     174322
 tasklist   0:00:00.148   71404     28577    6773    1606046
 ```
 
-For each process, `fastlist` prints (1) the **executable file**, (2) the **process ID**, and (3) the **parent process ID**, each seperated by a `\t`, followed by a `\n`. For example:
+For each process, `fastlist` prints (1) the **executable file**, (2) the **process ID**, and (3) the **parent process ID**, each separated by a `\t`, followed by a `\n`. For example:
 
 ```cmd
 λ fastlist
