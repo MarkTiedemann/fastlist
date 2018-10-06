@@ -10,4 +10,4 @@ test_script:
   - cmd: fastlist
   - cmd: bench 100
 cache:
-  - '%USERPROFILE%\scoop\cache'
+  - '%USERPROFILE%\scoop'
