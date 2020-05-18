@@ -44,6 +44,7 @@ SHA-256: `071f43816861b30663b17649abfcca743f17b353786218bac1f0f92e55acb3d8`
 - it is inspired by performance issues with existing solutions (for example, [sindresorhus/fkill#25](https://github.com/sindresorhus/fkill/issues/25))
 - its author, Mark Tiedemann, helps to maintain the Node wrapper for `tasklist`: [sindresorhus/tasklist](https://github.com/sindresorhus/tasklist)
 - [Reddit rumors](https://www.reddit.com/r/javascript/comments/f0kmqd/askjs_fastlistexe_was_flagged_as_a_malware_by_my/) to the contrary notwithstanding, it is not a virus
+- being included in [npmjs.com/ps-list](https://www.npmjs.com/package/ps-list), `fastlist` is downloaded up to 500,000 times per week
 
 ## License
 
