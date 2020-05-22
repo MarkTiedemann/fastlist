@@ -37,7 +37,7 @@ For each process, `fastlist` prints (1) the **process ID**, (2) the **parent pro
 - being included in [npmjs.com/ps-list](https://www.npmjs.com/package/ps-list), `fastlist` is downloaded up to 500,000 times per week
 - [Reddit rumors](https://www.reddit.com/r/javascript/comments/f0kmqd/askjs_fastlistexe_was_flagged_as_a_malware_by_my/) to the contrary notwithstanding, it is not a virus
 - its author helps to maintain the Node wrapper for `tasklist`: [sindresorhus/tasklist](https://github.com/sindresorhus/tasklist)
-- he has also written a [`fastlist` plugin](https://deno.land/x/fastlist) for [Deno](https://deno.land): [MarkTiedemann/deno_fastlist](https://github.com/MarkTiedemann/deno_fastlist)
+- there is also a [`fastlist` plugin](https://deno.land/x/fastlist) for [Deno](https://deno.land): [MarkTiedemann/deno_fastlist](https://github.com/MarkTiedemann/deno_fastlist)
 
 ## License
 
