@@ -22,8 +22,9 @@ for /l %%i in ( 1, 1, !runs! ) do (
   < nul set /P = # %%i / !runs! !cr!
 
   :: run benchmark
-  timeit tasklist > nul 2>&1
-  timeit fastlist > nul 2>&1
+  timeit tasklist.exe > nul 2>&1
+  timeit fastlist-0.2.0-x86.exe > nul 2>&1
+  timeit fastlist-0.2.0-x64.exe > nul 2>&1
 )
 
 :: count excluded runs

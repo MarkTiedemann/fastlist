@@ -1,2 +1,4 @@
-fastlist.*
+*.exe
+*.sha256
+*.sig
 timeit.*
