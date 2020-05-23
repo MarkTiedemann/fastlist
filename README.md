@@ -27,7 +27,7 @@ For each process, `fastlist` prints (1) the **process ID**, (2) the **parent pro
 
 ## Releases
 
-- [**v0.2.0**](https://github.com/MarkTiedemann/fastlist/releases/tag/v0.2.0) (May 22, 2020): Unicode support
+- [**v0.2.0**](https://github.com/MarkTiedemann/fastlist/releases/tag/v0.2.0) (May 23, 2020): Unicode support
 - [**v0.1.0**](https://github.com/MarkTiedemann/fastlist/releases/tag/v0.1.0) (Oct 5, 2018): Initial release
 
 ## Notes
