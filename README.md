@@ -23,7 +23,7 @@ For each process, `fastlist` prints (1) the **process ID**, (2) the **parent pro
 ...
 ```
 
-`fastlist` is presumably faster than `tasklist` because it does _not_ print the **session name**, **session number**, nor the **memory usage** of each process. Unlike `tasklist`, it does, however, print the **parent process ID**.
+`fastlist` is faster than `tasklist`, presumably, because it does _not_ print the **session name**, **session number**, nor the **memory usage** of each process. Unlike `tasklist`, it does, however, print the **parent process ID**.
 
 ## Releases
 
@@ -42,8 +42,8 @@ For each process, `fastlist` prints (1) the **process ID**, (2) the **parent pro
 
 ## Development
 
-- Download and install [Microsoft Visual Studio](https://visualstudio.microsoft.com/) including its workload for _Desktop Development with C++_. In VS, create a new _Console App_. Copy `faslist.cpp` into the project and build it.
-- To benchmark `faslist`, run [`bench.cmd`](bench.cmd).
+- Download and install [Microsoft Visual Studio](https://visualstudio.microsoft.com/), including its workload for _Desktop Development with C++_. In VS, create a new _Console App_. Copy [`fastlist.cpp`](fastlist.cpp) into the project and build it.
+- To benchmark `fastlist`, run [`bench.cmd`](bench.cmd).
 - `fastlist` uses [`upx`](https://github.com/upx/upx) to pack the binaries for reduced size (see [`pack.cmd`](pack.cmd)).
 
 ## License
