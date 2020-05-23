@@ -1,6 +1,10 @@
 @echo off
 setlocal enabledelayedexpansion
 
+if not exist timeit.exe (
+  curl -LO https://github.com/kodybrown/rktools2k3/raw/master/timeit.exe
+)
+
 :: determine run count (either first argument or 100 by default)
 set "runs="&for /f "delims=0123456789" %%i in ( "%1" ) do set runs=%%i
 if defined runs (
@@ -22,13 +26,13 @@ for /l %%i in ( 1, 1, !runs! ) do (
   < nul set /P = # %%i / !runs! !cr!
 
   :: run benchmark
-  timeit tasklist.exe > nul 2>&1
-  timeit fastlist-0.2.0-x86.exe > nul 2>&1
-  timeit fastlist-0.2.0-x64.exe > nul 2>&1
+  timeit.exe tasklist.exe > nul 2>&1
+  timeit.exe fastlist-0.2.1-x86.exe > nul 2>&1
+  timeit.exe fastlist-0.2.1-x64.exe > nul 2>&1
 )
 
 :: count excluded runs
-timeit -d -t > timeit.res 2>&1
+timeit.exe -d -t > timeit.res 2>&1
 findstr EXCL timeit.res | find /c /v "@" > timeit.cnt
 for /f "delims=" %%x in ( timeit.cnt ) do set excl=%%x
 set /a excl = %excl% / 2
@@ -36,6 +40,6 @@ set /a excl = %excl% / 2
 :: print results
 echo.
 echo.
-timeit -t
+timeit.exe -t
 echo.
 echo !excl! runs excluded each
