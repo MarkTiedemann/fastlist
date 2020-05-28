@@ -28,7 +28,7 @@ int main()
 	do
 	{
 		CW2A exe(entry.szExeFile, CP_UTF8);
-		std::cout << entry.th32ProcessID << "\t" << entry.th32ParentProcessID << "\t" << exe.m_psz << "\n";
+		std::cout << entry.th32ProcessID << '\t' << entry.th32ParentProcessID << '\t' << exe.m_psz << '\n';
 	} while (Process32Next(snap, &entry));
 	CloseHandle(snap);
 	return 0;

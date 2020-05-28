@@ -31,6 +31,10 @@ For each process, `fastlist` prints (1) the **process ID**, (2) the **parent pro
 - [**v0.2.0**](https://github.com/MarkTiedemann/fastlist/releases/tag/v0.2.0) (May 23, 2020): Unicode support; x86 and x64 build
 - [**v0.1.0**](https://github.com/MarkTiedemann/fastlist/releases/tag/v0.1.0) (Oct 5, 2018): Initial release
 
+## Compatibility
+
+- Running `fastlist` v0.2.0 or greater on Windows Vista or older, may result in the following error message: _"The program can't start because api-ms-win-crt-heap-l1-1-0.dll is missing from your computer"_. To fix this, either download [`fastlist` v0.1.0](https://github.com/MarkTiedemann/fastlist/releases/tag/v0.1.0), or download and install the [Microsoft Visual C++ Redistributable for Visual Studio 2015, 2017 and 2019](https://support.microsoft.com/en-us/help/2977003/the-latest-supported-visual-c-downloads): [vc_redist.x86.exe](https://aka.ms/vs/16/release/vc_redist.x86.exe) or [vc_redist.x64.exe](https://aka.ms/vs/16/release/vc_redist.x64.exe).
+
 ## Notes
 
 - `fastlist` was originally built for use in [sindresorhus/ps-list](https://github.com/sindresorhus/ps-list) (see [sindresorhus/ps-list#20](https://github.com/sindresorhus/ps-list/issues/20)).
@@ -45,10 +49,6 @@ For each process, `fastlist` prints (1) the **process ID**, (2) the **parent pro
 - Download and install [Microsoft Visual Studio](https://visualstudio.microsoft.com/), including its workload for _Desktop Development with C++_. In VS, create a new _Console App_. Copy [`fastlist.cpp`](fastlist.cpp) into the project and build it.
 - To benchmark `fastlist`, run [`bench.cmd`](bench.cmd).
 - `fastlist` uses [`upx`](https://github.com/upx/upx) to pack the binaries for reduced size (see [`pack.cmd`](pack.cmd)).
-
-## Compatibility
-
-- Running `fastlist` v0.2.0 or greater on Windows Vista or older, may result in the following error message: _"The program can't start because api-ms-win-crt-heap-l1-1-0.dll is missing from your computer"_. To fix this, either download [`fastlist` v0.1.0](https://github.com/MarkTiedemann/fastlist/releases/tag/v0.1.0), or download and install the [Microsoft Visual C++ Redistributable for Visual Studio 2015, 2017 and 2019](https://support.microsoft.com/en-us/help/2977003/the-latest-supported-visual-c-downloads): [vc_redist.x86.exe](https://aka.ms/vs/16/release/vc_redist.x86.exe) or [vc_redist.x64.exe](https://aka.ms/vs/16/release/vc_redist.x64.exe).
 
 ## License
 
