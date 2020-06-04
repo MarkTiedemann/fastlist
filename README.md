@@ -48,6 +48,7 @@ For each process, `fastlist` prints (1) the **process ID**, (2) the **parent pro
 
 - Download and install [Microsoft Visual Studio](https://visualstudio.microsoft.com/), including its workload for _Desktop Development with C++_. In VS, create a new _Console App_. Copy [`fastlist.cpp`](fastlist.cpp) into the project and build it.
 - To benchmark `fastlist`, run [`bench.cmd`](bench.cmd).
+- To test `fastlist`, run [`test.cmd`](test.cmd).
 - `fastlist` uses [`upx`](https://github.com/upx/upx) to pack the binaries for reduced size (see [`pack.cmd`](pack.cmd)).
 
 ## License
