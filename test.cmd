@@ -1,4 +1,5 @@
 @echo off
+setlocal
 
 :: Determine Windows version using `ver`
 :: C:\>ver
@@ -39,11 +40,15 @@ if %errorlevel% neq 0 (
     docker pull mcr.microsoft.com/windows:%windows_version%
 )
 
-:: Run test in container
-docker run --rm --interactive --tty --volume %cd%:C:\volume mcr.microsoft.com/windows:%windows_version% cmd /c .\volume\fastlist.exe
-if %errorlevel% neq 0 (
-    echo Error: Test failed with error level: %errorlevel%
-    exit /b 1
+for /f %%v in (VERSION) do (
+	for %%a in (x86 x64) do (
+        :: Run test in container
+        docker run --rm --interactive --tty --volume %cd%:C:\volume mcr.microsoft.com/windows:%windows_version% cmd /c .\volume\fastlist-%%v-%%a.exe
+        if %errorlevel% neq 0 (
+            echo Error: Test failed with error level: %errorlevel%
+            exit /b 1
+        )
+    )
 )
 
 echo.
