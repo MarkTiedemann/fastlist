@@ -1,40 +1,26 @@
 @echo off
-setlocal enabledelayedexpansion
 
 if not exist timeit.exe (
-  curl -LO https://github.com/kodybrown/rktools2k3/raw/master/timeit.exe
+	curl -LO https://github.com/MarkTiedemann/rktools2k3/raw/master/timeit.exe
 )
 
-:: Cleanup temp files
-if exist timeit.dat del timeit.dat
-if exist timeit.res del timeit.res
-if exist timeit.cnt del timeit.cnt
+if exist timeit.dat (
+	del timeit.dat
+)
 
 :: Get carriage return
-for /f %%r in ('copy /Z %~f0 nul') do set cr=%%r
-
-for /f %%v in (VERSION) do set v=%%v
-
-for /l %%i in (1, 1, 100) do (
-  :: Print progress
-  < nul set /P = # %%i / 100 !cr!
-
-  :: Run benchmark
-  timeit.exe tasklist.exe > nul 2>&1
-  timeit.exe wmic.exe process get name,processid,parentprocessid > nul 2>&1
-  timeit.exe fastlist-!v!-x86.exe > nul 2>&1
-  timeit.exe fastlist-!v!-x64.exe > nul 2>&1
+for /f %%c in ('copy /z %~f0 nul') do (
+	for /f %%v in (VERSION) do (
+		for /l %%i in (1, 1, 100) do (
+			< nul set /p="Run: %%i/100%%c"
+			timeit.exe tasklist.exe > nul 2> nul
+			timeit.exe wmic.exe process get name,processid,parentprocessid > nul 2> nul
+			for %%a in (x86 x64) do (
+				timeit.exe fastlist-%%v-%%a.exe > nul 2> nul
+			)
+		)
+		< nul set /p=%%c
+	)
 )
 
-:: Count excluded runs
-timeit.exe -d -t > timeit.res 2>&1
-findstr EXCL timeit.res | find /c /v "@" > timeit.cnt
-for /f "delims=" %%x in (timeit.cnt) do set excl=%%x
-set /a excl = %excl% / 2
-
-:: Print results
-echo.
-echo.
 timeit.exe -t
-echo.
-echo !excl! runs excluded each
